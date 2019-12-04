@@ -1,0 +1,7 @@
+{
+  "name": "mwNode",
+  "version": "0.0.1",
+  "dependencies": {
+    "serialport": "latest"
+  }
+}
