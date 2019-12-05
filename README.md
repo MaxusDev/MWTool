@@ -16,7 +16,7 @@ This repo is a debug tool for developers to visualize the raw data of Maxustech 
 python mw0582_gui.py
 ```
 
-![image-20191204171057379.png](https://i.loli.net/2019/12/04/Ykz1XvrmneRAJDP.png)
+![Xnip2019-12-05_19-17-28.png](https://i.loli.net/2019/12/05/NFYnSeI4XfypODc.png)
 
 #### Note:
 
