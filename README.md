@@ -57,7 +57,7 @@ Recommended serial tools include:
 
 4. Mode selection `AT+DEBUG=x`
 
-   Normal mode when x = 0 (default); Raw data mode when x = 2
+   Normal mode when x = 0000 (default); Raw data mode when x = 0002
 
 5. Detect Threshold `AT+THRES=xx`
 
