@@ -37,9 +37,10 @@ python mw0582_gui.py
 
 Recommended serial tools include:
 
-- For mac, `coolterm`is recommended
-- For windows, `taraterm` will be a nice choice
 - **Baudrate at 512000**
+- For mac, `coolterm`is recommended. To change the baudrate simply goto **"Option-Serial Port-Baudrate(Custom)"**
+  ![Change the baudrate](https://i.loli.net/2020/01/06/tOy9frKPDdCE4Al.png)
+- For windows, `taraterm` will be a nice choice
 
 #### Debug commands
 
