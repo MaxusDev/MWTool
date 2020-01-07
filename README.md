@@ -46,11 +46,11 @@ Recommended serial tools include:
 
 1. Radiated Power`AT+PA=x`
 
-   with x ranges from 0~7 (default is 1)
+   with x ranges from 0000~0007 (default is 0001)
 
 2. RX Gain `AT+REVGAIN=x`
 
-   with x ranges from 0~7 (default is 7)
+   with x ranges from 0000~0007 (default is 0007)
 
 3. Time delay after detection `AT+DELAY=xxxx`
 
@@ -62,5 +62,5 @@ Recommended serial tools include:
 
 5. Detect Threshold `AT+THRES=xx`
 
-   with xx ranges from 01~99 (default is 12)
+   with xx ranges from 0001~0099 (default is 0012)
 
