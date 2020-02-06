@@ -2,6 +2,8 @@
 
 This repo is a debug tool for developers to visualize the raw data of Maxustech mw series radar. MW series radar is a highly integrated signle chip motion sensor.
 
+Interested users are welcome to join [this](https://maxusdev.slack.com) slack group for further support.
+
 ## Usage
 
 ### Python (Only tested on v3.7.4)
