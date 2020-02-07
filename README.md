@@ -4,6 +4,9 @@ This repo is a debug tool for developers to visualize the raw data of Maxustech 
 
 Interested users are welcome to join [this](https://join.slack.com/t/mw0582/shared_invite/enQtOTIyMjI3MzcyOTMwLWM0ZGI2Njk3NTEzMjkwYjNjOTk0NDcwN2Y2YTdhOGM2NmJmYzZmZTUzMDZmOTI0MWExOTUyNzNmZmNlM2U5MDY) slack group for further support.
 
+## NOTICE
+For UART communication, we strongly suggest **CH340 USB-TTL** adapter.
+
 ## Usage
 
 ### Python (Only tested on v3.7.4)
