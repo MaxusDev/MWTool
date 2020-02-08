@@ -7,10 +7,6 @@ Interested users are welcome to join [this](https://join.slack.com/t/mw0582/shar
 ## NOTICE
 For UART communication, we strongly suggest **CH340 USB-TTL** adapter.
 
-For serial terminal application, we suggest **sscom32** for windows user and **Coolterm** for Mac users.
-![sscom32](https://i.loli.net/2020/02/08/8EzyiBthT5UQDa9.png)
-> The language is set to Chinese by default. Check the checkbox to change it to english and set baudrate to 512000. Try sending AT+DEBUG=0002. If succeed, you will get the raw data.
-
 
 ## Usage
 
@@ -50,27 +46,24 @@ Recommended serial tools include:
 - **Baudrate at 512000**
 - For mac, `coolterm`is recommended. To change the baudrate simply goto **"Option-Serial Port-Baudrate(Custom)"**
   ![Change the baudrate](https://i.loli.net/2020/01/06/tOy9frKPDdCE4Al.png)
-- For windows, `sscom32` will be a nice choice
+  
+  While using **Coolterm**, follow the instruction to set the terminal to *Line mode*.  Line mode doesn't send data until enter has been pressed. Raw mode sends characters directly to the screen.
+  ![](https://i.loli.net/2020/02/08/FfkESQmvrRGhLCW.png)
+- For windows, `sscom32` will be a nice choice. The language is set to Chinese by default. Check the checkbox to change to english and set baudrate to 512000.
+
+  ![sscom32](https://i.loli.net/2020/02/08/8EzyiBthT5UQDa9.png)
 
 #### Debug commands
 
-1. Radiated Power`AT+PA=x`
+- Radiated power `AT+PA=x`
+  The radiated power has 7 levels (0000~0007) for developer to choose. With the bigger number the device radiated more power.
+- Receive gain `AT+REVGAIN=x`
+  The receive gain has 7 levels (0000~0007) for developer to choose. With the bigger number the device becomes more sensitive.
+- Time delay `AT+DELAY=x`
+  The time delay represent how long VOUT stays high after the device detects object. Developers can choose number from 0001~3599 (unit in second).
+- Working mode `AT+DEBUG=x`
+  By default the device works at normal mode, x = 0000. Developer can use x = 0002 to fetch raw radar data.
+- Detect threshold `AT+THRES=x`
+  The threshold (0001~0099) represents how easy the device to trigger detection. With lower number the device is more inclined to trigger detection which could be a false alarm.
 
-   with x ranges from 0000~0007 (default is 0001)
-
-2. RX Gain `AT+REVGAIN=x`
-
-   with x ranges from 0000~0007 (default is 0007)
-
-3. Time delay after detection `AT+DELAY=xxxx`
-
-   with xxxx ranges from 0001~3599 (default is 0002, unit is second)
-
-4. Mode selection `AT+DEBUG=x`
-
-   Normal mode when x = 0000 (default); Raw data mode when x = 0002
-
-5. Detect Threshold `AT+THRES=xx`
-
-   with xx ranges from 0001~0099 (default is 0012)
-
+Radiated power, receive gain and detection threshold have a complicated relationship and should be set probably according to your situation to ensure proper functioning of the device.
