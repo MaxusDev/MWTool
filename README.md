@@ -7,6 +7,11 @@ Interested users are welcome to join [this](https://join.slack.com/t/mw0582/shar
 ## NOTICE
 For UART communication, we strongly suggest **CH340 USB-TTL** adapter.
 
+For serial terminal application, we suggest **sscom32** for windows user and **Coolterm** for Mac users.
+![sscom32](https://i.loli.net/2020/02/08/8EzyiBthT5UQDa9.png)
+> The language is set to Chinese by default. Check the checkbox to change it to english and set baudrate to 512000. Try sending AT+DEBUG=0002. If succeed, you will get the raw data.
+
+
 ## Usage
 
 ### Python (Only tested on v3.7.4)
@@ -45,7 +50,7 @@ Recommended serial tools include:
 - **Baudrate at 512000**
 - For mac, `coolterm`is recommended. To change the baudrate simply goto **"Option-Serial Port-Baudrate(Custom)"**
   ![Change the baudrate](https://i.loli.net/2020/01/06/tOy9frKPDdCE4Al.png)
-- For windows, `taraterm` will be a nice choice
+- For windows, `sscom32` will be a nice choice
 
 #### Debug commands
 
