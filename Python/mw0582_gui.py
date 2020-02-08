@@ -87,6 +87,9 @@ class SensingGUI(tk.Frame):
     def optionChanged(*args):
         print(self.opBoxVar.get())
         self.s = serial.Serial(self.opBoxVar.get(), 512000)
+        # serial write AT command to device to enable raw data output
+        command = "AT+DEBUG=0002"
+        self.s.write(command.encode('utf-8'))
         self.s.flush()
         if self.s is not None:
             self.labelVar.set("Device connected.")
@@ -266,7 +269,7 @@ class SensingGUI(tk.Frame):
 
   def rf_scale_click(self, v):
       if self.s is not None:
-        command = "AT+FREQ={}".format(v)
+        command = "AT+FREQ={:0>4d}".format(v)
         self.s.write(command.encode('utf-8'))
         line = self.s.read(2)
         if line is 'OK':
@@ -275,15 +278,15 @@ class SensingGUI(tk.Frame):
             tk.messagebox.showinfo("Success", "Parameter set successful!")
   def power_scale_click(self, v):
       if self.s is not None:
-        command = "AT+PA={}".format(v)
+        command = "AT+PA={:0>4d}".format(v)
         self.s.write(command.encode('utf-8'))
   def gain_scale_click(self,v):
       if self.s is not None:
-        command = "AT+REVGAIN={}".format(v)
+        command = "AT+REVGAIN={:0>4d}".format(v)
         self.s.write(command.encode('utf-8'))
   def delay_scale_click(self, v):
       if self.s is not None:
-        command = "AT+DELAY={}".format(v)
+        command = "AT+DELAY={:0>4d}".format(v)
         self.s.write(command.encode('utf-8'))
   def avgcheckbutton_click(self):
       self.irCheckbutton.deselect()

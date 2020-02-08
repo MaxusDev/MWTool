@@ -23,6 +23,12 @@ function listPorts() {
 
 var myPort = serialport(portName, { baudRate: 512000 });
 
+// Add serial write to enable raw data output before logging
+myPort.on("open", function() {
+  console.log("Port opened.");
+  myPort.write("AT+DEBUG=0002\n");
+})
+
 myPort.pipe(parser);
 
 parser.on('data', function(line) {
