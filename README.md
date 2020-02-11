@@ -1,11 +1,28 @@
 # MWTool for mw series radar
 
+
+
+<p align="center">
+  <img src="https://i.loli.net/2020/02/11/dX38gLZmTO5hI9F.png">
+</p>
+
 This repo is a debug tool for developers to visualize the raw data of Maxustech mw series radar. MW series radar is a highly integrated signle chip motion sensor.
 
 Interested users are welcome to join [this](https://join.slack.com/t/mw0582/shared_invite/enQtOTIyMjI3MzcyOTMwLWM0ZGI2Njk3NTEzMjkwYjNjOTk0NDcwN2Y2YTdhOGM2NmJmYzZmZTUzMDZmOTI0MWExOTUyNzNmZmNlM2U5MDY) slack group for further support.
 
-## NOTICE
-For UART communication, we strongly suggest **CH340 USB-TTL** adapter.
+# Introduction
+
+The MW0582TR11 is a highly integrated single chip 5.8GHz microwave motion sensor developed by Maxustech. The MW0582TR11 simplifies the implementation of non-contact detection applications and is an ideal solution for smart lighting, surveillance, automation and any self-monitored radar system. 
+
+The module achieves broad sensing coverage given the well-designed 1Tx, 1Rx transceiver antenna and robust performance in anti-interference with built-in PLL. Simple programming model changes can enable a wide variety of sensor implementation (Short, Mid, Long) with the possibility of dynamic reconfiguration for implementing a multimode sensor.
+
+## Working Principle
+
+<p align="center">
+  <img src="https://i.loli.net/2020/02/11/gK6ABj3mEyiMaUl.jpg">
+</p>
+
+MW0582TR11 is based on doppler principle. It emits 5.8GHz radio signal and collects the echo. Mixing is already done by the device and the raw data is sampled at the rate of 625Hz. If there's no motion, the raw data will stay around a constant number. However, if there's motion detected, the raw data will start to fluctuate. Users can set a threshold at the raw data for simple detection application.
 
 
 ## Usage
@@ -44,11 +61,15 @@ python mw0582_gui.py
 Recommended serial tools include:
 
 - **Baudrate at 512000**
+
+- **CH340/CP2102 USB-TTL** adapter are recommended
+
 - For mac, `coolterm`is recommended. To change the baudrate simply goto **"Option-Serial Port-Baudrate(Custom)"**
   ![Change the baudrate](https://i.loli.net/2020/01/06/tOy9frKPDdCE4Al.png)
   
   While using **Coolterm**, follow the instruction to set the terminal to *Line mode*.  Line mode doesn't send data until enter has been pressed. Raw mode sends characters directly to the screen.
   ![](https://i.loli.net/2020/02/08/FfkESQmvrRGhLCW.png)
+  
 - For windows, `sscom32` will be a nice choice. The language is set to Chinese by default. Check the checkbox to change to english and set baudrate to 512000.
 
   ![sscom32](https://i.loli.net/2020/02/08/8EzyiBthT5UQDa9.png)
